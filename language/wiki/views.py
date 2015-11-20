@@ -19,7 +19,7 @@ def category(request,categoryName):
     context={}
     try:
         category=Category.objects.get(name=categoryName)
-        context['category']=Category
+        context['category']=category
         context['pages']=Page.objects.filter(category=category)
     except Category.DoesNotExist:
         pass
